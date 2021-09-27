@@ -7,6 +7,8 @@ Antes de iniciar, precisamos executar algumas configurações do CodeIgniter par
 
 # application/config/config.php
 
+Vamos configurar
+
 ### Prerequisites
 
 What things you need to install the software and how to install them.
