@@ -1,11 +1,11 @@
 <h3 align="center">API Lista de Compras</h3>
 <!-- [![Hackathon](https://img.shields.io/badge/Criar%20Item-POST-blue)](http://hackathon.url.com) -->
 
-## 🏁 Para Começar <a name = "para-comecar"></a>
+# 🏁 Para Começar <a name = "para-comecar"></a>
 
 Antes de iniciar, precisamos executar algumas configurações do CodeIgniter para funcionar localmente.
 
-# application/config/config.php
+#### application/config/config.php
 
 Vamos configurar
 
