@@ -1,8 +1,4 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img src="https://i.imgur.com/AZ2iWek.png" alt="Project logo"></a>
-</p>
-<h3 align="center">codeigniter/framework</h3>
+<h3 align="center">API Lista de Compras [!UNIMAR]</h3>
 
 <div align="center">
 
