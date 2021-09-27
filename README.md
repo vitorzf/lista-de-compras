@@ -132,7 +132,7 @@ Não enviar
 
 ----
 ### Excluir Item
-![](https://img.shields.io/badge/DELETE-%7B%7BURL%7D%7D%2Fitens%2F%7B%7Bid%7D%7D-red)
+![](https://img.shields.io/badge/DELETE-%7B%7BURL%7D%7D%2Fitens%2F%7B%7Bid%7D%7D-critical)
 
 #### Body
 ```
