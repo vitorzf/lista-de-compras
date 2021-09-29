@@ -1,58 +1,146 @@
 <h3 align="center">API Lista de Compras</h3>
-<!-- [![Hackathon](https://img.shields.io/badge/Criar%20Item-POST-blue)](http://hackathon.url.com) -->
 
-# 🏁 Para Começar <a name = "para-comecar"></a>
+## 🏁 Para Começar <a name = "para-comecar"></a>
 
 Antes de iniciar, precisamos executar algumas configurações do CodeIgniter para funcionar localmente.
 
-#### application/config/config.php
+### Altere os seguintes arquivos no caminho `application/config/`
 
-Vamos configurar
+#### config.php
+```[26] $config['base_url'] = 'http://localhost/lista_de_compras/';```
+Altere para a url definida para o seu projeto
 
-### Prerequisites
+#### database.php
+```
+$db['default'] = array(
+		'dsn'	=> '',
+		'hostname' => 'localhost',
+		'username' => 'root',
+		'password' => '',
+		'database' => 'mercado',
+		'dbdriver' => 'mysqli',
+		'dbprefix' => '',
+		'pconnect' => FALSE,
+		'db_debug' => (ENVIRONMENT !== 'production'),
+		'cache_on' => FALSE,
+		'cachedir' => '',
+		'char_set' => 'utf8',
+		'dbcollat' => 'utf8_general_ci',
+		'swap_pre' => '',
+		'encrypt' => FALSE,
+		'compress' => FALSE,
+		'stricton' => FALSE,
+		'failover' => array(),
+		'save_queries' => TRUE
+);
+```
+Alterar o hostname, username e database com os dados necessários para conexão com seu banco local<br>
+O arquivo sql está no caminho `database/banco.sql`
 
-What things you need to install the software and how to install them.
+<h3 align="center">ENDPOINTS</h3>
+
+#### Substitua o termo {{URL}} pela url definida acima
+``` 
+http://localhost/mercado/api
+```
+
+#### Header das requisições
+	Content-Type: application/json
+
+----
+### Adicionar item á Lista
+![](https://img.shields.io/badge/POST-%7B%7BURL%7D%7D%2Fitens-brightgreen)
+
+#### Body
+```
+{
+ "nome": "KIT Teclado + Mouse Logitech Mk345",
+ "valor": 250.00
+}
+```
+#### Resposta Esperada
+<h4>200 - OK</h4>
 
 ```
-Give examples
+{
+  "id": "1",
+  "nome": "KIT Teclado + Mouse Logitech Mk345",
+  "valor": "250.00"
+}
 ```
 
-### Installing
+----
+### Listar Itens
+![](https://img.shields.io/badge/GET-%7B%7BURL%7D%7D%2Fitens-blue)
 
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+#### Body
+```
+Não enviar
+```
+#### Resposta Esperada
+<h4>200 - OK</h4>
 
 ```
-Give the example
+{
+  "itens": [
+    "KIT Teclado + Mouse Logitech Mk345",
+  ],
+  "total_value": 250
+}
 ```
 
-And repeat
+----
+### Listar Item específico
+![](https://img.shields.io/badge/GET-%7B%7BURL%7D%7D%2Fitens%2F%7B%7Bid%7D%7D-blue)
+
+#### Body
+```
+Não enviar
+```
+#### Resposta Esperada
+<h4>200 - OK</h4>
 
 ```
-until finished
+{
+  "id": "1",
+  "nome": "KIT Teclado + Mouse Logitech Mk345",
+  "valor": "250.00"
+}
 ```
 
-## 🎈 Usage <a name="usage"></a>
+----
+### Editar Item
+![](https://img.shields.io/badge/PUT-%7B%7BURL%7D%7D%2Fitens%2F%7B%7Bid%7D%7D-orange)
 
-Add notes about how to use the system.
+#### Body
+```
+{
+ "nome": "KIT Teclado + Mouse Sem Fio Logitech Mk345",
+ "valor": 190.00
+} 
+```
+#### Resposta Esperada
+<h4>200 - OK</h4>
 
-## ⛏️ Built With <a name = "tech_stack"></a>
+```
+{
+  "id": "1",
+  "nome": "KIT Teclado + Mouse Sem Fio Logitech Mk345",
+  "valor": "190.00"
+}
+```
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+----
+### Excluir Item
+![](https://img.shields.io/badge/DELETE-%7B%7BURL%7D%7D%2Fitens%2F%7B%7Bid%7D%7D-critical)
 
-## ✍️ Authors <a name = "authors"></a>
+#### Body
+```
+Não enviar
+```
+#### Resposta Esperada
+<h4>200 - OK</h4>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors)
-who participated in this project.
-
-## 🎉 Acknowledgments <a name = "acknowledgments"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+```
+No Response
+```
